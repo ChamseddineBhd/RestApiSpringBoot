@@ -1,0 +1,6 @@
+/hello/target/
+/target
+
+# IntelliJ
+/.idea
+*.iml
