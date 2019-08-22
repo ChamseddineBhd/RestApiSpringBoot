@@ -5,8 +5,8 @@ Do not start from scratch darling :)
  - Simple contoller with two methods.
  - Swagger 2 configuration.
  - Jib plugin for automatic docker image build :
-     mvn clean install -Pdocker
+     ``` mvn clean install -Pdocker
      list images : docker images
      run image : docker run -p 8090:8090 nom-image
-     test it : localhost:8090/swagger-ui.html
+     test it : localhost:8090/swagger-ui.html ```
  - Next ? ...
