@@ -8,5 +8,5 @@ Do not start from scratch darling :)
      ``` mvn clean install -Pdocker
      list images : docker images
      run image : docker run -p 8090:8090 nom-image
-     test it : localhost:8090/swagger-ui.html ```
+     test it : localhost:8090/swagger-ui.html 
  - Next ? ...
