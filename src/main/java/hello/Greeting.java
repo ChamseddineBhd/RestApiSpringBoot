@@ -1,5 +1,9 @@
 package hello;
 
+/**
+ * @author Chamseddine Benhamed <chamseddine.benhamed at ensi-uma.tn>
+ */
+
 public class Greeting {
 
     private final long id;
