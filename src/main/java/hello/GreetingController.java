@@ -3,7 +3,7 @@ package hello;
 import java.util.concurrent.atomic.AtomicLong;
 
 import io.swagger.annotations.Api;
-import models.Greeting;
+import entities.GreetingEntity;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,14 +25,14 @@ public class GreetingController {
     public static final String API_VERSION = "v1";
 
     @GetMapping("/greetingEN")
-    public Greeting greetingEN(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(),
+    public GreetingEntity greetingEN(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return new GreetingEntity(counter.incrementAndGet(),
                 String.format("Hello, %s!", name));
     }
 
     @GetMapping("/greetingFR")
-    public Greeting greetingFR(@RequestParam(value = "name", defaultValue = "tout le monde") String name) {
-        return new Greeting(counter.incrementAndGet(),
+    public GreetingEntity greetingFR(@RequestParam(value = "name", defaultValue = "tout le monde") String name) {
+        return new GreetingEntity(counter.incrementAndGet(),
                 String.format("Bonjour, %s!", name));
     }
 }
