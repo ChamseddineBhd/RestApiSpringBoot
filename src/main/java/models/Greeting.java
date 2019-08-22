@@ -1,4 +1,4 @@
-package hello;
+package models;
 
 /**
  * @author Chamseddine Benhamed <chamseddine.benhamed at ensi-uma.tn>
