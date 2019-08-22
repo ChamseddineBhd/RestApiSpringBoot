@@ -14,6 +14,11 @@
         <version>2.1.6.RELEASE</version>
     </parent>
 
+    <properties>
+        <jib.version>1.0.0</jib.version>
+        <java.version>1.8</java.version>
+    </properties>
+
     <dependencies>
         <!-- Compilation dependencies -->
         <dependency>
@@ -47,10 +52,6 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
 
     <build>
         <plugins>
@@ -58,8 +59,50 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib.version}</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:8</image>
+                    </from>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>dockerBuild</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                        <configuration>
+                            <to>
+                                <image>greeting/${project.artifactId}</image>
+                                <tags>${project.version}</tags>
+                            </to>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 
 </project>
