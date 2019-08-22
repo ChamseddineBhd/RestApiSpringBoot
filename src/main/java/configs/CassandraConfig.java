@@ -1,4 +1,4 @@
-package hello;
+package configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,6 @@ import org.springframework.data.cassandra.config.CassandraClusterFactoryBean;
 import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 import repositories.GreetingRepository;
-
 
 /**
  * @author Chamseddine Benhamed <chamseddine.benhamed at ensi-uma.tn>

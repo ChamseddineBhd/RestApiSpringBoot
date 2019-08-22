@@ -18,6 +18,6 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class GreetingEntity {
 
     @PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-    private long id;
+    private final long id;
     private String content;
 }
