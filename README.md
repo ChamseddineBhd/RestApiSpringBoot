@@ -7,7 +7,7 @@ Do not start from scratch darling :)
  - Jib plugin for automatic docker image build :
      ``` mvn clean install -Pdocker
      list images : docker images
-     run image : docker run -p 8090:8090 nom-image
+     run image : docker run -p 8090:8090 nom-image //also do not forget to bind cassandra port
      test it : localhost:8090/swagger-ui.html 
  - Checkstyle
  - Basic controller test
