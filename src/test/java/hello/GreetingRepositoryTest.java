@@ -14,6 +14,7 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import repositories.GreetingRepository;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.context.TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS;
 
 /**
@@ -38,5 +39,6 @@ public class GreetingRepositoryTest {
         GreetingEntity greetingEntity = new GreetingEntity(
                 124, "Content");
         greetingRepository.save(greetingEntity);
+        assertEquals(greetingEntity.getContent(), greetingRepository.findById(124).get().getContent());
     }
 }
