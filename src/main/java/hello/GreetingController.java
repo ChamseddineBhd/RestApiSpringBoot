@@ -1,6 +1,6 @@
 package hello;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import io.swagger.annotations.Api;
 import entities.GreetingEntity;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @ComponentScan(basePackageClasses = {Application.class})
 public class GreetingController {
 
-    private final AtomicLong counter = new AtomicLong();
+    private final AtomicInteger counter = new AtomicInteger();
 
     public static final String API_VERSION = "v1";
 

@@ -1,4 +1,4 @@
-package configs;
+package hello;
 
 /**
  * @author Chamseddine Benhamed <chamseddine.benhamed at ensi-uma.tn>
